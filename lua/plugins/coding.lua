@@ -31,4 +31,17 @@ return {
       return opts
     end,
   },
+  -- Auto-rename de etiquetas HTML/XML
+  {
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("nvim-ts-autotag").setup({
+        -- Configuraciones opcionales
+        enable_close = true, -- Auto-cierre de etiquetas
+        enable_rename = true, -- Auto-renombrado de etiquetas
+        enable_close_on_slash = true, -- Cierre automático al escribir </
+      })
+    end,
+    dependencies = "nvim-treesitter/nvim-treesitter",
+  },
 }
